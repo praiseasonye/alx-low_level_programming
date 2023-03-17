@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 /**
  * main - a program that multiplies two numbers.
@@ -30,7 +31,10 @@ int main(int argc, char *argv[])
 	}
 	else
 	{
-		printf("%d", argv[1] * argv[2]);
+		int i = atoi(argv[1]);
+		int j = atoi(argv[2]);
+
+		printf("%d\n", i * j);
 		return (0);
 	}
 }
