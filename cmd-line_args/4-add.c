@@ -26,24 +26,21 @@ int main(int argc, char *argv[])
 {
 	int count = 1;
 	int count2 = 0;
-	int sum;	
+	int sum = 0;	
 
 	if (argc < 2)
 		printf("%d\n", 0);
 	for (count = 1; count < argc; count++)
 	{
-		for (count2 = 0; argv[count][count2] != '\0'; count2++)
+		for (count2 = 0; *(*(argv + count) + count2) != '\0'; count2++)
 		{
-			if (argv[count][count2] >= 48 && argv[count][count2] <= 57)
-				sum += atoi(argv[count]);
-			else
-			{
+			if (*(*(argv + count) + count2) < 48 || *(*(argv + count) + count2) > 57)
+			{	
 				printf("Error\n");
 				return (1);
-				break;
 			}
-			
 		}
+		sum = sum + atoi(argv[count]);
 	}
 	printf("%d\n", sum);
 	return (0);
