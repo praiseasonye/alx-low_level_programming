@@ -11,3 +11,26 @@
  * your program should print Error,
  * followed by a new line, and return 1
  *
+ * @argc: the counter representing the number of arguments passed
+ * to the command line.
+ *
+ * @argv: the pointer to an array of pointers to the arguments passed
+ * to the command line.
+ *
+ * Return: 1 if there are not up to three argument passed to the
+ * command line and 0 if its up to three.
+ */
+
+int main(int argc, char *argv[])
+{
+	if (argc != 3)
+	{
+		printf("Error\n");
+		return (1);
+	}
+	else
+	{
+		printf("%d", argv[1] * argv[2]);
+		return (0);
+	}
+}
