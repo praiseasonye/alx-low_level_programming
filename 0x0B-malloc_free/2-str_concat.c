@@ -2,36 +2,45 @@
 #include <stdlib.h>
 
 /**
- * str_concat - concatenates two strings.
- * @f1: first string.
- * @f2: second string.
+ * str_concat - A function that concatenates two strings
  *
- * Return: pointer of an array of chars
+ * @s1: the first string
+ * @s2: the second string
+ *
+ * Return: a pointer to the nwly concatenated string.
  */
 
-char *str_concat(char *f1, char *f2)
+char *str_concat(char *s1, char *s2)
 {
-	char *result;
-	unsigned int i, j, k, limit;
+	int i = 0;
+	int k = 0;
+	char *j;
+	int str1_len = 0;
+	int str2_len = 1;
 
-	if (f1 == NULL)
-		f1 = "";
-	if (f2 == NULL)
-		f2 = "";
-	for (i = 0; f1[i] != '\0'; i++)
-		;
-	for (j = 0; f2[j] != '\0'; j++)
-		;
-	result = malloc(sizeof(char) * (i + j + 1));
-	if (result == NULL)
-	{
-		free(result);
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
+	for (i = 0; s1[i] != '\0'; i++)
+		str1_len += 1;
+
+	for (i = 0; s2[i] != '\0'; i++)
+		str2_len += 1;
+
+	j = malloc(sizeof(char) * (str1_len + str2_len));
+	if (j == NULL)
 		return (NULL);
+	for (i = 0; i < str1_len; i++)
+		j[i] = s1[i];
+	while (s2[k] != '\0')
+	{
+		j[i] = s2[k];
+		i++;
+		k++;
 	}
-	for (k = 0; k < i; k++)
-		result[k] = f1[k];
-	limit = j;
-	for (j = 0; j <= limit; k++, j++)
-		result[k] = f2[j];
-	return (result);
+	return (j);
+
+
+
 }
