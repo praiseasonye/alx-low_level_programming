@@ -20,10 +20,8 @@ char *_strpbrk(char *s, char *accept)
 		for (j = 0; accept[j]; j++)
 		{
 			if (s[i] == accept[j])
-				break;
+				return (s + i);
 		}
-		if (s[i] == '\0')
-			return (NULL);
 	}
-	return (s + i);
+	return (NULL);
 }
