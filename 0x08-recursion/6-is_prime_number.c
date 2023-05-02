@@ -1,5 +1,7 @@
 #include "main.h"
 
+int prime_finder(int i, int j);
+
 /**
  * is_prime_number - A recursive function that  returns 1
  *                      if the input integer is a prime
@@ -9,8 +11,6 @@
  *
  * Return: 1 or 0 if n is prime or not.
  */
-
-int prime_finder(int i, int j);
 
 int is_prime_number(int n)
 {
