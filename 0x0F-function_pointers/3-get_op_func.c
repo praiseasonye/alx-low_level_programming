@@ -27,7 +27,7 @@ int (*get_op_func(char *s))(int, int)
 
 	while (i < 5)
 	{
-		if (*s == *(ops[i].op))
+		if (ops[i].op != NULL && *s == *(ops[i].op))
 			return (ops[i].f);
 		i++;
 	}
