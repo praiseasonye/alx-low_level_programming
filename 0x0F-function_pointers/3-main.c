@@ -3,20 +3,16 @@
 #include <stdio.h>
 
 /**
- * main - a function that does simple arithmetic on two integars
- *        from the command line
- * @argc: the number of arguments passe go the main function
- * @argv: an array containing the inputs entered by the user
+ * main - Prints the result of simple operations.
+ * @argc: The number of arguments supplied to the program.
+ * @argv: An array of pointers to the arguments.
  *
- * Return: the result of the operation performed by the function or
- *         Error if the arguments are invlid or a wrng operator is
- *         to the command line.
- *
+ * Return: Always 0.
  */
-
 int main(int __attribute__((__unused__)) argc, char *argv[])
 {
-	int result;
+	int num1, num2;
+	char *op;
 
 	if (argc != 4)
 	{
@@ -24,19 +20,24 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 		exit(98);
 	}
 
-	if ((*argv[2] == '%' || *argv[2] == '/') && (atoi(argv[3]) == 0))
+	num1 = atoi(argv[1]);
+	op = argv[2];
+	num2 = atoi(argv[3]);
+
+	if (get_op_func(op) == NULL || op[1] != '\0')
+	{
+		printf("Error\n");
+		exit(99);
+	}
+
+	if ((*op == '/' && num2 == 0) ||
+	    (*op == '%' && num2 == 0))
 	{
 		printf("Error\n");
 		exit(100);
 	}
 
-	if (get_op_func(argv[2]) == NULL || *argv[1] == '\0')
-	{
-		printf("Error\n");
-		exit(99);
-	}
-	result = get_op_func(argv[2])(atoi(argv[1]), atoi(argv[3]));
-	printf("%d\n", result);
+	printf("%d\n", get_op_func(op)(num1, num2));
 
 	return (0);
 }
