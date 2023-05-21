@@ -10,12 +10,20 @@
 void print_all(const char * const format, ...)
 {
 
-	fd_t form_spec[] = {
-		{'c', CHARACTER},
-		{'i', INTEGAR},
-		{'f', FLOAT},
-		{'s', STRING}
+	fs_t specifier[] = {
+		{'c'},
+		{'i'},
+		{'f'},
+		{'s'}
 	}
+	
+	fd_t data_type[] = {
+		{(char)va_arg(input, int)},
+		{va_arg(input, int)},
+		{(float)va_arg(input, double)},
+		{va_arg(input, char *)}
+	}
+
 	int i = 0;
 	va_list input;
 
