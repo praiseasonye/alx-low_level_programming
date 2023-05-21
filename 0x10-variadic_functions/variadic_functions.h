@@ -15,13 +15,13 @@
  *
  */
 
-struct args
+typedef struct datatype
 {
 	char c;
 	int i;
 	float f;
 	char *s;
-}
+} fd_t;
 
 /**
  * struct format_data - a structure that will be used to
@@ -32,11 +32,10 @@ struct args
  *             would be stored here.
  */
 
-typedef struct format_data
+typedef struct format_specifier
 {
 	char specifier;
-	struct args data_args;
-} fd_t;
+} fs_t;
 
 int _putchar(char c);
 int sum_them_all(const unsigned int n, ...);
