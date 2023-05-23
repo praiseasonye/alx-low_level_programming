@@ -6,36 +6,21 @@
 #include <stdio.h>
 
 /**
- * struct args - a structure that holds the differnt data types
+ * struct specifier - a structure that holds and prints
+ *                    differnt data types
  *
- * @c: char
- * @i: int
- * @f: float
- * @s: string
+ * @format: a string containig the different data types to be
+ *          printed.
+ * @print_arg: a function pointer that points to the suitable function
+ *             after the speifier has been selected.
  *
  */
 
-typedef struct datatype
+typedef struct specifier
 {
-	char c;
-	int i;
-	float f;
-	char *s;
-} fd_t;
-
-/**
- * struct format_data - a structure that will be used to
- *                      iterate over the specifiers and thier data
- *                      types.
- * @specifier: the letter indicating a datatype
- * @data_args: these are the diferent datatypes. the diferent args
- *             would be stored here.
- */
-
-typedef struct format_specifier
-{
-	char specifier;
-} fs_t;
+	char *format;
+	void (*print_arg)(va_list args);
+} specifier_t;
 
 int _putchar(char c);
 int sum_them_all(const unsigned int n, ...);
