@@ -10,7 +10,7 @@ int get_cent(int money);
  *        The money is given as an argument to the command
  *        line.
  *
- * @argv: the number of arguments passed to the command line
+ * @argc: the number of arguments passed to the command line
  * @argv: an array of pointers to the arguments in form of strings
  *        passed to the command line.
  *
