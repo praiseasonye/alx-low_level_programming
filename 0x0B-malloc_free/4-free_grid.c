@@ -9,12 +9,13 @@ include "main.h"
  * Return: no return
  */
 
-void free_grid(int **gridpoint, int height)
+void free_grid(int **grid, int height)
 {
-	if (gridpoint != NULL && height != 0)
+	int i;
+
+	for (i = 0; i < height; i++)
 	{
-		for (; height >= 0; height--)
-			free(gridpoint[height]);
-		free(gridpoint);
+		free(grid[i]);
 	}
+	free(grid);
 }
