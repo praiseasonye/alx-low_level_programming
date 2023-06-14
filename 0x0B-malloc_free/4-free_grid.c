@@ -3,10 +3,10 @@
 
 /**
  * free_grid - frees a 2 dimensional grid.
- * @gridpoint: multidimensional array of integers.
+ * @grid: multidimensional array of integers.
  * @height: the height of the grid.
  *
- * Return: no return
+ * Return: void
  */
 
 void free_grid(int **grid, int height)
