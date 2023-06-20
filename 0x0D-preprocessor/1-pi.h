@@ -1,6 +1,6 @@
-#ifndef SIZE
+#ifndef PI
 
 #define PI 3.14159265359
 
-#endif /*0_object_like_macro.h*/
+#endif /*1-pi.h*/
 
