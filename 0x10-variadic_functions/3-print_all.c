@@ -123,6 +123,9 @@ void print_string(va_list input)
 
 	string = va_arg(input, char *);
 	if (string == NULL)
+	{
 		printf("(nil)");
+		return;
+	}
 	printf("%s", string);
 }
