@@ -8,6 +8,8 @@
  * @head: a pointer to a pointer to the first node in the linked
  *        list.
  *
+ * @str: the string to be copied into the head->string element
+ *
  * Return: a pointer to the newly inserted node.
  *
  */
