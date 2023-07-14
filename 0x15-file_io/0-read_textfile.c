@@ -18,10 +18,14 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	int fd = open(filename, O_RDONLY);
 	if (fd == -1)
-		return 0;
+		return (0);
 	if (filename == NULL)
 		return (0);
 	buff = malloc(letters * sizeof(char));
+	if (buff == NULL)
+	{
+		return (0);
+	}
 	while (num_bytes != 0)
 	{
 		num_bytes = read(fd, buff, letters);
@@ -33,6 +37,12 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		buff[letters] = '\0';
 		for (i = 0; buff[i] != '\0'; i++)
 			write(1, &buff[i], 1);
+		if (i != letter)
+		{
+			free(buff);
+			return (0);
+		}
+
 	}
 	free(buff);
 	close(fd);
