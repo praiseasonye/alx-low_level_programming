@@ -5,7 +5,7 @@
  *
  * @filename: the name of the file to be created.
  *
- * @text_context: a pointer to the text that dhoul be written to filename
+ * @text_content: a pointer to the text that dhoul be written to filename
  *
  * Return: 1 on succes -1 on failure.
  */
