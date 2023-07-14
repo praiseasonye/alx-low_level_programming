@@ -39,6 +39,11 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		free(buff);
 		return (0);
 	}
+	if (write_bytes != read_bytes)
+	{
+		free(buff);
+		return (0);
+	}
 	free(buff);
 	close(fd);
 	return (write_bytes);
